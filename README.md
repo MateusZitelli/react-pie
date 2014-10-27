@@ -5,6 +5,7 @@
 The usage is very simple seeing that this is a very small component,
 you just need to pass the data
 Seeing that this is a very simple component a example will clarify 
+```javascript
 var data = [
   { text: '< 6', quantity: 2000 },
   { text: '6-10', quantity: 2500 },
@@ -30,3 +31,4 @@ var Index = React.createClass({
   }
 
 });
+```
