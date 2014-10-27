@@ -1,0 +1,30 @@
+{
+  "name": "react-pie",
+  "version": "0.0.1",
+  "description": "A simple pie chart component using React.js and D3.js",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MateusZitelli/react-pie.git"
+  },
+  "keywords": [
+    "react",
+    "graph",
+    "d3",
+    "javascript",
+    "react-component"
+  ],
+  "author": {
+    "name": "Mateus Zitelli Dantas",
+    "email": "zitellimateus@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "d3": "^3.4.13",
+    "jsx-loader": "^0.11.2",
+    "react": "^0.11.2"
+  }
+}
