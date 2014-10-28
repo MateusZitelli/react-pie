@@ -15,13 +15,14 @@ var Pie = React.createClass({
     return {
       data: this.props.data,
       colorRange: this.props.colorRange,
-      arcRadius: Math.min(this.props.width, this.props.height) / 2
+      arcRadius: Math.min(this.props.width, this.props.height) / 2,
     };
   },
+  
+  _me: null,
 
   _color() {
     dataLength = this.state.data.length;
-    console.log(d3.range(0, dataLength, +dataLength/this.state.colorRange.length));
     return d3.scale.linear()
     .domain([0, dataLength])
       .range(this.state.colorRange); 
@@ -39,16 +40,17 @@ var Pie = React.createClass({
       .value(function(d) { return d.quantity; }).call(null,data);
   },
 
-  _renderGraph (me) {
+  _renderGraph () {
     var _this = this;
     // Based in http://bl.ocks.org/mbostock/3887235
-    var me = me.append('g')
+    if(!this._me){ 
+      this._me = d3.select(this.getDOMNode()).append('g')
       .attr("transform", "translate(" +
         this.props.width / 2 + "," + this.props.height / 2 + ")"
-      );
+      ); 
+    }
 
-
-    var g = me.selectAll(".arc")
+    var g = this._me.selectAll(".arc")
       .data(this._pie(this.state.data))
       .enter().append("g")
       .attr("class", "arc");
@@ -69,13 +71,11 @@ var Pie = React.createClass({
   },
 
   componentDidMount () {
-    d3.select(this.getDOMNode())
-      .call(this._renderGraph);
+    this._renderGraph();
   },
 
   shouldComponentUpdate (nextProps) {
-    d3.select(this.getDOMNode())
-      .call(this._renderGraph);
+    this._renderGraph();
     return false;
   },
 
