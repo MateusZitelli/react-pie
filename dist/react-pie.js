@@ -81,9 +81,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _me: null,
 	
 	  _color:function() {
-	    dataLength = this.state.data.length;
+	    var rangeData = [];
+	    var dataLength = this.state.data.length;
+	    var colorLength = this.state.colorRange.length;
+	    for(var i = 0; i < colorLength; i++){
+	      rangeData.push(dataLength * i / colorLength);
+	    }
 	    return d3.scale.linear()
-	    .domain([0, dataLength])
+	    .domain(rangeData)
 	      .range(this.state.colorRange); 
 	  },
 	

@@ -15,7 +15,8 @@ var data = [
   { text: '> 40', quantity: 2000 }
 ];
 
-var colorRange = ["#0b64a0","#f4b425",  "#fcedd6", "#f7e3bf", "#fcce65", "#fec92d", "#f4b425"];
+var colorRange = ["#0b64a0", "#5098d8", "#80b2e0", "#afcfef",
+"#d4e6f9",  "#fcedd6", "#f7e3bf", "#fcce65", "#fec92d", "#f4b425"];
 
 var Index = React.createClass({
 
