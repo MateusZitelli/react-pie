@@ -1,6 +1,8 @@
 #React-pie
 > A simple Pie Chart component in React.js
 
+[Demo page](https://mateuszitelli.github.io/react-pie/)
+
 ##Usage
 Seeing that this is a very simple component I think that an example is enouth to explain the usage:
 ```javascript
