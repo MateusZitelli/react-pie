@@ -32,3 +32,6 @@ var Index = React.createClass({
 
 });
 ```
+Which generates:
+
+<img src="https://raw.githubusercontent.com/MateusZitelli/react-pie/master/preview.png" width="30%" height="30%"></img>
