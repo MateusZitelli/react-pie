@@ -2,9 +2,7 @@
 > A simple Pie Chart component in React.js
 
 ##Usage
-The usage is very simple seeing that this is a very small component,
-you just need to pass the data
-Seeing that this is a very simple component a example will clarify 
+Seeing that this is a very simple component I think that an example is enouth to explain the usage:
 ```javascript
 var data = [
   { text: '< 6', quantity: 2000 },
