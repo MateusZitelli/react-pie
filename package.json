@@ -25,6 +25,7 @@
   "devDependencies": {
     "d3": "^3.4.13",
     "jsx-loader": "^0.11.2",
-    "react": "^0.11.2"
+    "react": "^0.11.2",
+    "webpack": "^1.8.11"
   }
 }
