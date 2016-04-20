@@ -9,7 +9,7 @@ var Pie = React.createClass({
   propTypes: {
     data : React.PropTypes.array.isRequired,
     colorRange: React.PropTypes.array.isRequired
-  }, 
+  },
 
   getInitialState() {
     return {
@@ -18,7 +18,7 @@ var Pie = React.createClass({
       arcRadius: Math.min(this.props.width, this.props.height) / 2,
     };
   },
-  
+
   _me: null,
 
   _color() {
@@ -30,7 +30,7 @@ var Pie = React.createClass({
     }
     return d3.scale.linear()
     .domain(rangeData)
-      .range(this.state.colorRange); 
+      .range(this.state.colorRange);
   },
 
   _arc() {
@@ -48,11 +48,11 @@ var Pie = React.createClass({
   _renderGraph () {
     var _this = this;
     // Based in http://bl.ocks.org/mbostock/3887235
-    if(!this._me){ 
-      this._me = d3.select(this.getDOMNode()).append('g')
+    if(!this._me){
+      this._me = d3.select(React.findDOMNode(this.refs.graph)).append('g')
       .attr("transform", "translate(" +
         this.props.width / 2 + "," + this.props.height / 2 + ")"
-      ); 
+      );
     }
 
     var g = this._me.selectAll(".arc")
@@ -62,7 +62,7 @@ var Pie = React.createClass({
 
     g.append("path")
       .attr("d", this._arc())
-      .style("fill", function(d, i) { 
+      .style("fill", function(d, i) {
         return _this._color().call(null, i);
       });
 
@@ -86,7 +86,7 @@ var Pie = React.createClass({
 
   render() {
     return (
-      <svg width="100%" height={this.props.height}></svg>
+      <svg width="100%" height={this.props.height} ref="graph"></svg>
     );
   }
 
